@@ -1,0 +1,35 @@
+<html>
+<head>
+<center><h1 style = "font-size:40"> This is so cool!!!!!<h1></center>
+</head>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+
+<body>
+ 
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDq3eQtm5PR6Ck1udG5bTeQoo3BI0tbZ7E",
+    authDomain: "the-death-star.firebaseapp.com",
+    databaseURL: "https://the-death-star.firebaseio.com",
+    storageBucket: "the-death-star.appspot.com",
+    messagingSenderId: "797837292677"
+  };
+  firebase.initializeApp(config);
+  var database1 = firebase.database();
+  function writeUserData(userId, name, email, imageUrl) 
+  {
+    database1.ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+  }
+  }
+
+</script>
+<center><button onclick = "writeUserData('Ishani','Joker','darthvader@death-star.com','https://cdn.arstechnica.net/wp-content/uploads/2016/02/5718897981_10faa45ac3_b-640x624.jpg')">Call me(LOL)</button></center>
+</body>
+</html>
